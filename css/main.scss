@@ -1,0 +1,247 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Global
+@import "colors";
+@import "layout";
+@import "typography";
+
+// Components
+@import "byline";
+@import "buttons";
+@import "cards";
+@import "code";
+@import "embeds";
+@import "featured";
+@import "figures";
+@import "nav";
+@import "tags";
+@import "twitter-cards";
+
+:root {
+    color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  fill: var(--fg-color);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+html {
+  // To blend with the footer on short pages
+  background-color: var(--secondary-bg-color);
+}
+
+svg {
+  fill: inherit;
+}
+
+.error {
+  max-width: 22rem;
+  margin: 8em auto;
+  text-align: center;
+
+  p {
+    font-family: var(--ui-font);
+  }
+}
+
+nav.pagination {
+  font-size: 0; // Fix percentage issues with whitespace
+  margin: 2rem auto;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    font-size: 1rem;
+    font-family: var(--ui-font);
+    padding: 1em;
+
+    &.next::after {
+      content: " →";
+    }
+
+    &.previous::before {
+      content: "← ";
+    }
+  }
+}
+
+.social {
+  font-size: 0; // Fix percentage issue with whitespace
+  margin: 4rem auto;
+  text-align: center;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  div {
+    display: inline-block;
+    font-size: 1rem;
+    width: 50%;
+  }
+
+  a {
+    display: inline-block;
+    margin: 0.75rem;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.button {
+  border:  1px solid var(--accent-color);
+  border-radius: 10.0em;
+  font-family: var(--ui-font);
+  line-height: 3em;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &.suggested {
+    background-color: var(--accent-color);
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.05),
+      0 3px 3px rgba(0, 0, 0, 0.22);
+    color: var(--bg-color);
+  }
+
+  &.flat {
+    border: none;
+  }
+}
+
+pre {
+  -webkit-text-size-adjust: none;
+}
+
+.hidden {
+  display: none;
+}
+
+details {
+  border-radius: 7px;
+  padding-top: 0.5em;
+  padding-bottom: 1px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+
+  margin: 20px;
+
+  background-color: #2a2a2a;
+  color: white;
+}
+
+summary {
+  font-weight: bold;
+  border-radius: 7px;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+
+  background-color: #4a82dd;
+}
+
+details[open] {
+  p {
+    font-size: 16px;
+  }
+}
+
+details[open] summary {
+  margin-bottom: 0.5em;
+}
+
+.faqButton {
+  margin: 10px;
+  display: inline-block;
+  padding: 30px 100px; 
+  text-align: center;
+  text-decoration: none;
+  font-size: 2rem;
+  background: linear-gradient(rgb(91, 207, 251) 20%, rgb(0, 89, 204) 100%);
+  color: white;
+  border: 0;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.linksButton {
+  margin: 10px;
+  display: inline-block;
+  padding: 30px 100px; 
+  text-align: center;
+  text-decoration: none;
+  font-size: 2rem;
+  background: linear-gradient(rgb(245, 169, 184) 20%, rgb(245, 61, 107) 100%);
+  color: white;
+  border: 0;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.links {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.gridSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  gap: 10px; 
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  padding-block: .5rem;
+  padding-inline: .5rem 1rem;
+  max-width: fit-content;
+  cursor: pointer;
+  color: var(--fg-color);
+  text-decoration: none;
+}
+
+.gridItem img {
+  width: 64px; 
+  height: 64px; 
+  border-radius: 15px;
+}
+
+.gridItem .details {
+  display: flex;
+  flex-direction: column;
+}
+
+.gridItem .details h2 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.gridItem .details p {
+  font-size: 0.75em;
+  margin: 0;
+}
