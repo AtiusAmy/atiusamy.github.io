@@ -1,7 +1,7 @@
 button {
-	transition: transform 0.6s; !important
-	-webkit-transition: transform 0.6s} ;
-
+	transition: transform 0.6s;}
+button {
+	-webkit-transition: transform 0.6s;}
 button:hover {
 	transform: scale(1.05);
 	cursor: pointer;
